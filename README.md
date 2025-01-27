@@ -32,3 +32,17 @@ Next Steps:
 
 Setting up the development environment.
 Planning the project structure and workflow.
+
+
+Milestone 2: Project Setup and Login Page
+
+This milestone focuses on setting up the project structure and implementing a basic login page.
+
+Key Features
+
+- Project Setup: Initialized the project with the required dependencies and folder structure.
+- Login Page: A simple login page with fields for username and password.
+
+Tech Stack Used
+
+- Frontend: React, Tailwindcss
