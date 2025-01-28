@@ -1,4 +1,4 @@
-import LoginPage from "../pages/Login";
+import LoginPage from "../page/Login";
 export{
     LoginPage,
 
