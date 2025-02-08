@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const fs =require("fs");
 const User = require("../model/user");
 const router = express.Router();
 const {upload} = require("../multer");
@@ -8,6 +9,7 @@ const ErrorHandler = require("../utils/ErrorHandler");
 
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const jwt = require("jsonwebtoken");
+const bcrypt=require("bcryptjs");
 const sendMail = require("../utils/sendMail");
 // create user
 router.post("/create-user",upload.single("file"), async(req,res)=>{
@@ -66,4 +68,4 @@ module.exports = router;
 
 
 
-module.exports = router;
+
