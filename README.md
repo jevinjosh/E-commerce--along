@@ -171,3 +171,22 @@ Used props to pass product information dynamically.
 Implemented array mapping to render multiple product cards.
 
 Designed a structured homepage layout usinG TAILWIND CSS.
+
+Milestone 9:
+Learning Goals
+Learn how to create a form to collect product details Learn how to take multiple images as input
+
+Key Points
+The form will be used to input product details, which will be saved in the database and displayed on the product home page
+The form should support uploading multiple product images
+Milestone 10: Creating a Mongoose Schema and Endpoint
+Learning Goals
+Learned how to write a product schema using Mongoose
+Learned how to create an endpoint to validate and store product details in MongoDB
+Key Points
+Product Schema
+Defined the structure of product data, including fields like name, description, price, and image URL
+Ensured proper validation, such as required fields and correct data types
+Endpoint Creation
+Built a POST endpoint to receive product data
+Validated and stored the product details in MongoDB
