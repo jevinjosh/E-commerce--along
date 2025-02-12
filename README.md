@@ -179,6 +179,7 @@ Learn how to create a form to collect product details Learn how to take multiple
 Key Points
 The form will be used to input product details, which will be saved in the database and displayed on the product home page
 The form should support uploading multiple product images
+
 Milestone 10: Creating a Mongoose Schema and Endpoint
 Learning Goals
 Learned how to write a product schema using Mongoose
