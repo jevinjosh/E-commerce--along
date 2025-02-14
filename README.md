@@ -180,6 +180,10 @@ Key Points
 The form will be used to input product details, which will be saved in the database and displayed on the product home page
 The form should support uploading multiple product images
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b0cf40 (update)
 Milestone 10: Creating a Mongoose Schema and Endpoint
 Learning Goals
 Learned how to write a product schema using Mongoose
@@ -191,3 +195,19 @@ Ensured proper validation, such as required fields and correct data types
 Endpoint Creation
 Built a POST endpoint to receive product data
 Validated and stored the product details in MongoDB
+
+Milestone 11: Fetching and Displaying Product Data
+Overview
+This project demonstrates how to send and receive product data from a backend API and dynamically display it using a frontend component.
+
+Features
+Backend: Express.js API endpoint to send all product data.
+Frontend: Fetch API to get product data and display it using a ProductCard component.
+
+Milestone 12: Filtering and Sending Product Data
+Overview
+This project demonstrates how to filter product data based on a user’s email and send it to the frontend, where it is dynamically displayed using a ProductCard component.
+
+Features
+Backend: Express.js API endpoint that filters and sends product data based on the user’s email.
+Frontend: Fetch API to request filtered product data and display it dynamically.
