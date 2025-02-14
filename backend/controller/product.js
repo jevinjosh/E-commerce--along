@@ -71,13 +71,13 @@ router.post('/create-product', pupload.array('images', 10), async (req, res) => 
 });
 
 // Route: Get all products
-router.get('/get-products', async (req, res) => {
+router.get('/my-products', async (req, res) => {
+    const { email } = req.query;
     try {
-        const products = await Product.find();
+        const products = await Product.find({ email });
         const productsWithFullImageUrl = products.map(product => {
             if (product.images && product.images.length > 0) {
                 product.images = product.images.map(imagePath => {
-                    // Image URLs are already prefixed with /products
                     return imagePath;
                 });
             }
@@ -88,5 +88,7 @@ router.get('/get-products', async (req, res) => {
         console.error(' Server error:', err);
         res.status(500).json({ error: 'Server error. Could not fetch products.' });
     }
-});
+}
+);
+
 module.exports = router;
