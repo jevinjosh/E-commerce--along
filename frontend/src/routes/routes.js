@@ -1,8 +1,10 @@
 import LoginPage from "../pages/LoginPage";
 import SignupPage from "../pages/SignupPage";
 import Home from"../pages/Home"
-import createProduct from "../pages/createProduct";
+import CreateProduct from "../pages/createProduct";
 import MyProducts from "../pages/myProduct";
+import Cart from "../pages/cart";
+
 export{
-    LoginPage,SignupPage,Home,createProduct,MyProducts}
-    
+    LoginPage,SignupPage,Home,MyProducts,CreateProduct,Cart}
+                                                                                                                                                                                                                                                                

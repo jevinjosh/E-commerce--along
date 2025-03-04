@@ -211,3 +211,81 @@ This project demonstrates how to filter product data based on a user’s email a
 Features
 Backend: Express.js API endpoint that filters and sends product data based on the user’s email.
 Frontend: Fetch API to request filtered product data and display it dynamically.
+
+*Milestone 13: Edit Uploaded Products*
+
+Overview
+In this milestone, we implemented the functionality to edit uploaded products in our application. Users can now modify product details seamlessly, with the form auto-filling existing data for convenience. Once edited, the updated information is sent to the backend and reflected in real time.
+
+ Tech Talk
+Backend: Created a PUT API endpoint (/products/:id) using findByIdAndUpdate() in MongoDB, ensuring proper error handling for invalid or non-existent IDs.
+Frontend: Added an edit button on product cards that fetches existing product details and auto-fills the form for editing. The updated data is then sent to the backend.
+Testing: Verified API functionality using Postman, checked data updates in MongoDB, and ensured real-time UI updates for a smooth user experience
+
+
+
+ *Milestone 14 - Delete Product Functionality*  
+
+In this milestone, we implemented a delete functionality for products. We added a DELETE API endpoint in the backend using Express.js and MongoDB, allowing products to be removed using their ID. On the frontend, we added a **delete button to each product card, which sends a request to the server to remove the product from the database. This ensures a smooth user experience by dynamically updating the UI after deletion. 
+
+*Milestone 15 - Reusable Navigation Component*  
+
+In this milestone, we created a reusable and responsive navigation bar for our eCommerce project. The Nav component includes links to essential pages like home, My Products, Add Product, and Cart. It was designed to be adaptive and user-friendly using CSS for responsiveness. This component was then integrated across multiple pages to ensure seamless navigation throughout the app. 
+
+
+Tech Stalk :
+
+Frontend:
+React.js – For building the Nav component.
+
+Welcome to Milestone 16! 🌟
+
+Today, we will create an product info page that display all the product data and choose quantity and add to card button.
+
+Learning Goals 🎯
+By the end of this milestone, you will:
+
+How to new page to display each product.
+How to add quantity and add to card button.
+Steps for Milestone 16📝
+Create an new page that display all the product data
+
+Submission Guidelines 📥
+
+Push your code to your GitHub repository.
+Ensure your repository is publicly accessible.
+Update the README file to summarize your progress for Milestone 16.
+Share the repository link in the assignment submission section.
+Good luck, Kalvians! ✨
+*Milestone 15 - Reusable Navigation Component*  
+
+In this milestone, we created a reusable and responsive navigation bar for our eCommerce project. The Nav component includes links to essential pages like home, My Products, Add Product, and Cart. It was designed to be adaptive and user-friendly using CSS for responsiveness. This component was then integrated across multiple pages to ensure seamless navigation throughout the app. 
+
+
+Tech Stalk :
+
+Frontend:
+React.js – For building the Nav component.
+give like this
+ChatGPT said:
+Here’s your Milestone 16 update in the same format:
+
+*Milestone 16 - Product Info Page*
+In this milestone, we created a Product Info Page that displays detailed product data. Users can choose the quantity and click the Add to Cart button to add items to their cart.
+
+
+Tech Stack:
+Frontend:
+ React.js – For building the Product Info Page.
+
+
+*Milestone 17 - Cart Functionality*
+
+
+In this milestone, we implemented cart functionality that allows users to store product details in a shopping cart.  
+Users can add products, and the cart schema stores the product information.
+
+
+ Tech Stack
+Backend:mongodb
+frontend:react.js

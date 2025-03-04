@@ -1,8 +1,8 @@
 import React from 'react'
 import "./App.css";
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import {LoginPage,SignupPage,Home, MyProducts} from "./routes/routes.js";
-import CreateProduct from './pages/createProduct.jsx';
+import {LoginPage,SignupPage,Home, MyProducts,CreateProduct,Cart} from "./routes/routes";
+// import CreateProduct from './pages/createProduct.jsx';
 
 const App = () => {
   return (
@@ -14,6 +14,8 @@ const App = () => {
         <Route path='/signup' element={<SignupPage/>}/>
         <Route path='/create' element={<CreateProduct/>}/>
         <Route path='/myproducts' element={<MyProducts/>}/>
+        <Route path='/create-product/:id' element={<CreateProduct/>}/>
+        <Route path='/cart' element={<Cart/>}/>
       </Routes>
       </BrowserRouter>
 
