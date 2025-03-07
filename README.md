@@ -289,3 +289,74 @@ Users can add products, and the cart schema stores the product information.
  Tech Stack
 Backend:mongodb
 frontend:react.js
+
+## Milestone 18 - Cart Page Backend Endpoint
+
+### Description
+In this milestone, we have created a **Backend Endpoint** to fetch all products inside the user's cart based on their email ID. This functionality helps display cart items on the cart page.
+
+### Learning Goals 🎯
+
+Create an endpoint to receive requests from the cart page.
+
+Fetch all products from the cart for the logged-in user using their email ID.
+
+### Features Implemented
+API Endpoint to fetch cart items.
+
+Filter cart products using user email.
+
+Connect backend with the cart page.
+
+## Milestone 19 - Cart Functionality
+
+### Learning Goals 🎯
+
+Create a cart page UI to display products.
+
+Add + and - buttons to increase or decrease product quantity.
+
+Build backend endpoints to update product quantity.
+
+### Features Implemented ✅
+
+Frontend:
+
+Display cart products fetched from the backend.
+
+Buttons to increase or decrease product quantity. 
+
+Automatic cart updates on button click.
+
+## Backend:
+
+Endpoint to increase product quantity.
+
+Endpoint to decrease product quantity.
+
+
+## Milestone 20 - Profile Page
+
+### Learning Goals 🎯
+
+Create a backend endpoint to send user data via email.
+
+Build a frontend profile page to display user information.
+
+Display profile photo, name, email, and addresses.
+
+### Features Implemented ✅
+
+#### Frontend:
+
+Profile page displaying user photo, name, and email.
+
+Address section with an "Add Address" button.
+
+Message showing "No address found" if no addresses are available.
+
+#### Backend:
+
+Endpoint to fetch user data including name, email, and addresses.
+
+Endpoint to send user data via email.

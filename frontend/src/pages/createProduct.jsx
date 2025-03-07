@@ -26,10 +26,7 @@ const CreateProduct = () => {
         { title: "Fashion" },
         { title: "Books" },
         { title: "Home Appliances" },
-
     ];
-    console.log("Category value:", category);
-
 
 
     useEffect(() => {
@@ -94,7 +91,7 @@ const CreateProduct = () => {
                 );
                 if (response.status === 200) {
                     alert("Product updated successfully!");
-                    navigate("/myproducts");
+                    navigate("/my-products");
                 }
             } else {
                 const response = await axios.post(
