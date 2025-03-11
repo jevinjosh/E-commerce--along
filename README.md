@@ -360,3 +360,28 @@ Message showing "No address found" if no addresses are available.
 Endpoint to fetch user data including name, email, and addresses.
 
 Endpoint to send user data via email.
+
+Milestone 21-Address Form Page
+Overview
+In this milestone, we created a frontend page with an address input form. This form allows users to enter their address details, including country, city, address lines, zip code, and address type.
+Features
+User-friendly address form with input fields for:
+Country
+City
+Address Line 1
+Address Line 2
+Zip Code
+Address Type
+State management to store input data.
+Navigation from the profile section when clicking “Add Address.”
+
+
+Milestone 22-Storing User Address in the Database via Backend API
+Overview
+In Milestone 22, we will create a backend endpoint to store user addresses in a database. This endpoint will receive address details from the frontend and update the user's profile by adding the address to the address array inside the user collection.
+Features
+Create an API endpoint to handle address storage.
+Receive address data from the frontend form.
+Update the user collection by adding the address to the existing address array.
+Ensure data persistence by storing the updated user profile in the database.
+Enhance user profiles with multiple addresses.
