@@ -180,10 +180,7 @@ Key Points
 The form will be used to input product details, which will be saved in the database and displayed on the product home page
 The form should support uploading multiple product images
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 6b0cf40 (update)
 Milestone 10: Creating a Mongoose Schema and Endpoint
 Learning Goals
 Learned how to write a product schema using Mongoose
@@ -385,3 +382,26 @@ Receive address data from the frontend form.
 Update the user collection by adding the address to the existing address array.
 Ensure data persistence by storing the updated user profile in the database.
 Enhance user profiles with multiple addresses.
+
+Milestone 25
+
+### Overview
+This milestone focuses on creating a backend endpoint to place an order. The endpoint will handle products, user details, and address information, storing order details in MongoDB.
+
+### Features
+Accepts user email, product details, and address as input.
+Retrieves the user’s _id using their email.
+Creates separate orders for each product with the same address.
+Saves order details in the MongoDB orders collection using the existing schema.
+
+## Milestone 26
+
+### Overview
+
+This milestone focuses on creating a backend endpoint to retrieve all orders of a user using their email.
+
+### Features
+Accepts user email as input.
+Retrieves the user’s _id using their email.
+Fetches all orders associated with the user’s _id.
+Returns the user's order details in the response.

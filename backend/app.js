@@ -26,10 +26,12 @@ app.use('/products', express.static(path.join(__dirname, 'products')));
 // Import Routes
 const userRoutes = require("./controller/user");
 const productRoutes = require('./controller/product');
+const orderRoutes = require("./controller/order")
 
 // Route Handling
 app.use("/api/v2/user", userRoutes);
 app.use("/api/v2/product", productRoutes);
+app.use("/api/v2/order", orderRoutes)
 
 // Error Handling Middleware
 app.use(ErrorHandler);
