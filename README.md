@@ -428,3 +428,40 @@ Accepts user email as input.
 Retrieves the user’s _id using their email.
 Fetches all orders associated with the user’s _id.
 Returns the user's order details in the response.
+
+*Milestone 27 - My Orders Page*
+
+ Overview
+In this milestone, we will create a My Orders page where users can view their order history. We will fetch user-specific orders from the backend by making a GET request to the /my-orders endpoint, passing the user's email. The retrieved orders will then be displayed on the frontend. Additionally, we will update the navigation bar to include a link to the My Orders page for easier access.
+
+Tech Stack
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Frontend: React
+
+*Milestone 28 - Cancel Order Feature*
+
+Overview
+In this milestone, we will enhance the My Order page by adding a Cancel Order button for each order. Users will be able to cancel an order unless it has already been canceled. We will implement a new backend endpoint to update the order status to Canceled when the button is clicked.
+
+Tech Stack
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Frontend: React
+
+
+*Milestone 29 - PayPal Integration*
+
+Overview
+
+In this milestone, we will integrate PayPal as an online payment option in the Order Confirmation page. Users can choose between Cash on Delivery (COD) and Online Payment (PayPal). Selecting Online Payment will display the PayPal buttons.
+
+Tech Stack
+
+Backend: Node.js, Express.js
+
+Database: MongoDB
+
+Frontend: React
+
+Payment Gateway: PayPal
