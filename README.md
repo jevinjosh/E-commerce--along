@@ -638,4 +638,13 @@ Key feautures :
 After creating PayPal account and getting the UserID inside sandbox account.
 Implement online payment using PayPal API using the client key you created earlier.
 Download NPM package called react-paypal-js that will provide an component called PayPalScriptProvider which will display online payment methods like credit or debit card etc..,
-Tech Stack : Frontend - OrderConfirmationPage.jsx -React
+Tech Stack : Frontend - OrderConfirmationPage
+
+*Milestone 31 - Redux Global State Management*
+
+Overview
+In this milestone, we implement Redux for global state management, allowing seamless access to the user's email across components. We configure a Redux store, define actions, and provide the store to the app.
+
+Tech Stack
+- Frontend: React
+- State Management: Redux, React-Redux
