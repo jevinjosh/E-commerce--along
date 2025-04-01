@@ -25,13 +25,13 @@ const CreateAddress = () => {
             address2,
             zipCode,
             addressType,
-            email: "oviya.s2604@gmail.com"
+            email: "jevin@gmail.com"
         };
 
 
         try {
             const response = await axios.post(
-                "http://localhost:5000/api/v2/user/add-address",
+                "http://localhost:8000/api/v2/user/add-address",
                 addressData,
                 {
                     headers: { "Content-Type": "application/json" },

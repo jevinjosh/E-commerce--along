@@ -1,14 +1,14 @@
-
 import React, { useEffect, useState } from "react";
 import Product from "../components/Product";
-import Nav from "../components/nav"
+import Nav from "../components/nav";
+
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true); // For loading state
   const [error, setError] = useState(null); // For error handling
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/v2/product/get-products")
+    fetch("http://localhost:8000/api/v2/product/get-products")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
@@ -48,8 +48,3 @@ export default function Home() {
     </>
   );
 }
-
-
-
-
-

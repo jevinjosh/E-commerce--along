@@ -1,31 +1,28 @@
 import React from 'react'
 import "./App.css";
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import {LoginPage,SignupPage,Home, MyProducts,CreateProduct,Cart, ProductDetail, Profile, CreateAddress, SelectAddress, OrderConfirmation} from "./routes/routes";
-import MyOrdersPage from './pages/MyOrdersPage';
-// import CreateProduct from './pages/createProduct.jsx';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import {LoginPage,SignupPage,Home,CreateProduct,MyProducts,Cart,ProductDetails,Profile,CreateAddress,SelectAddress,OrderConfirmation,MyOrdersPage} from "./routes/routes.js";
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
       <Routes>
-      <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/signup' element={<SignupPage/>}/>
+        <Route path='/' element={<Home/>}/>
         <Route path='/create' element={<CreateProduct/>}/>
         <Route path='/myproducts' element={<MyProducts/>}/>
-        <Route path='/create-product/:id' element={<CreateProduct/>}/>
+        <Route path="/create-product/:id" element={<CreateProduct />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
         <Route path='/cart' element={<Cart/>}/>
-        <Route path='/productdetail' element={<ProductDetail/>}/>
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/create-address' element={<CreateAddress/>}/>
-        <Route path='/select-Address' element={<SelectAddress/>}/>
-        <Route path='/Order-confirmation' element={<OrderConfirmation/>}/>
-        <Route path='/my-orders' element={<MyOrdersPage/>}/>
+        <Route path='/select-address' element={<SelectAddress/>}/>
+        <Route path='/order-confirmation' element={<OrderConfirmation/>}/>
+        <Route path='/myorders' element={<MyOrdersPage/>}/>
       </Routes>
       </BrowserRouter>
-
     </div>
   )
 }

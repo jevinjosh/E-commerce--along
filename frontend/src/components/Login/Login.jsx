@@ -1,18 +1,6 @@
 import { React, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import styles from "../../styles/styles";
-
-
-
-
-
-
-
-
-
-
-
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -47,10 +35,6 @@ const Login = () => {
                 />
               </div>
             </div>
-
-
-
-
             <div>
               <label
                 htmlFor="password"
@@ -83,7 +67,7 @@ const Login = () => {
                   />
                 )}
               </div>
-            </div>
+              </div>
             <div className={`${styles.noramlFlex} justify-between`}>
               <div className={`${styles.noramlFlex}`}>
                 <input
@@ -117,7 +101,7 @@ const Login = () => {
               </button>
             </div>
             <div className={`${styles.noramlFlex} w-full`}>
-              <h4>Not have any account?</h4>
+            <h4>Not have any account?</h4>
               </div>
           </form>
         </div>
@@ -125,6 +109,10 @@ const Login = () => {
     </div>
      )
     }
-   
-   
     export default Login
+
+
+
+
+
+

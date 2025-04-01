@@ -1,11 +1,17 @@
-const app =require("./app");
-const connectDatabase =require("./db/Database");
+const app=require("./app")
+const connectDatabase=require("./db/Database");
+const cors = require("cors");
+app.use(cors()); // Allow all origins
 
-process.on("uncaugthExpceotion",(err)=>{
+
+process.on("uncaughtException",(err)=>{
     console.log(`Error: ${err.message}`);
     console.log(`shutting down the server for handling uncaught exception`);
-});
+  });
+ 
 
+
+  // config
 if (process.env.NODE_ENV !== "PRODUCTION") {
     require("dotenv").config({
       path: "config/.env",
@@ -26,9 +32,6 @@ const server = app.listen(process.env.PORT, () => {
       );
     });
   
-  
-  
-  
     // unhandled promise rejection(explain error handling when setting up server as you code)
     process.on("unhandledRejection", (err) => {
       console.error(`Unhandled Rejection: ${err.message}`);
@@ -38,4 +41,3 @@ const server = app.listen(process.env.PORT, () => {
         process.exit(1); // Exit with failure code
       });
     });
-  

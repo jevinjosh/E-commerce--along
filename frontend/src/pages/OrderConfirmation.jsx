@@ -36,7 +36,7 @@ const OrderConfirmation = () => {
             try {
                 // Fetch selected address
                 const addressResponse = await axios.get(
-                    'http://localhost:5000/api/v2/user/addresses',
+                    'http://localhost:8000/api/v2/user/addresses',
                     {
                         params: { email: email },
                     }
@@ -56,7 +56,7 @@ const OrderConfirmation = () => {
 
                 // Fetch cart products
                 const cartResponse = await axios.get(
-                    'http://localhost:5000/api/v2/product/cartproducts',
+                    'http://localhost:8000/api/v2/product/cartproducts',
                     {
                         params: { email: email },
                     }
@@ -73,7 +73,7 @@ const OrderConfirmation = () => {
                     name: item.productId.name,
                     price: item.productId.price,
                     images: item.productId.images.map(
-                        (imagePath) => `http://localhost:5000${imagePath}`
+                        (imagePath) => `http://localhost:8000${imagePath}`
                     ),
                     quantity: item.quantity,
                 }));
@@ -132,7 +132,7 @@ const OrderConfirmation = () => {
 
             // Place order
             const response = await axios.post(
-                'http://localhost:5000/api/v2/orders/place-order',
+                'http://localhost:8000/api/v2/orders/place-order',
                 payload
             );
 
@@ -284,7 +284,7 @@ const OrderConfirmation = () => {
                             <div className='mt-4' style={{ maxWidth: '500px' }}>
                                 <PayPalScriptProvider
                                     options={{
-                                        'client-id': "AWGDeGBiLgw939__oBJMu0cQyfaYJ3xZfQjHywFb0XVb2aTM25Td68dfbifaqNmK3GVdtek6OzSF27GE",
+                                        'client-id': "AaksnocAXS0mkM6Q7UR0H8Q6JVwbUcHHLJZx0bDXjvQwrf2z_lD8disNNl7tBD_qisvCbz-Xu1CeYtrY",
                                     }}
                                 >
                                     <PayPalButtons

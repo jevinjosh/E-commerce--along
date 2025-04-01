@@ -1,3 +1,5 @@
+
+
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
@@ -88,9 +90,6 @@ router.get("/profile", catchAsyncErrors(async (req, res, next) => {
         addresses: user.addresses,
     });
   }));
-  
-
-
   router.post("/add-address", catchAsyncErrors(async (req, res, next) => {
     const { country, city, address1, address2, zipCode, addressType, email } = req.body;
   
@@ -122,7 +121,6 @@ router.get("/profile", catchAsyncErrors(async (req, res, next) => {
         addresses: user.addresses,
     });
   }));
-  
   router.get("/addresses", catchAsyncErrors(async (req, res, next) => {
     const { email } = req.query;
     if (!email) {
@@ -139,4 +137,9 @@ router.get("/profile", catchAsyncErrors(async (req, res, next) => {
   }
   ));
   
+  
+  
+  
+  
+
 module.exports = router;
