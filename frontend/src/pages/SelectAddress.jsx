@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../axiosConfig';
 import Nav from '../components/nav'; // Ensure correct casing
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -18,7 +18,7 @@ const SelectAddress = () => {
             return;
         const fetchAddresses = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/v2/user/addresses', {
+                const response = await axios.get('/api/v2/user/addresses', {
                     params: { email: userEmail },
                 });
 

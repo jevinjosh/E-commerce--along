@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Order = require('../model/order'); // Adjust path as needed
 const User = require('../model/user');   // Adjust path as needed
-
-router.post('/place-order', async (req, res) => {
+const {isAuthenicatedUser}=require('../middleware/auth')
+router.post('/place-order',isAuthenicatedUser,async (req, res) => {
     try {
         const { email, orderItems, shippingAddress } = req.body;
 
@@ -48,7 +48,7 @@ router.post('/place-order', async (req, res) => {
 });
 
 
-router.get('/myorders', async (req, res) => {
+router.get('/myorders',isAuthenicatedUser,async (req, res) => {
     try {
         // Retrieve email from query parameters
         const { email } = req.query;
