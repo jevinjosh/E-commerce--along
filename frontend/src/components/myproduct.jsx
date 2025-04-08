@@ -29,7 +29,7 @@ function Myproduct({ _id, name, images, description, price }) {
     const handleDelete = async () => {
         try {
             const response = await axios.delete(
-                `http://localhost:8000/api/v2/product/delete-product/${_id}`
+                `http://localhost:5000/api/v2/product/delete-product/${_id}`
             );
             if (response.status === 200) {
                 alert("Product deleted successfully!");

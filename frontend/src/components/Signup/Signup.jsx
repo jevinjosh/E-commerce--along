@@ -1,6 +1,3 @@
-
-
-
 import { React, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import styles from "../../styles/styles";
@@ -49,7 +46,7 @@ const Signup = () => {
     };
 
 
-    axios.post("http://localhost:8000/api/v2/user/create-user", newForm, config).then((res) => {
+    axios.post("http://localhost:5000/api/v2/user/create-user", newForm, config).then((res) => {
       console.log(res.data);
     }).catch((err) => {
       console.log(err);

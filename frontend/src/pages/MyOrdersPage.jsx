@@ -1,22 +1,21 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from '../axiosConfig';
-import Nav from '../components/nav'
+import Nav from '../components/NavBar'
 import { useSelector } from 'react-redux';
 
 const MyOrdersPage = () => {
     const [orders, setOrders] = useState([]);
-    const email=useSelector((state)=>state.user.email);
+    const email=useSelector((state)=> state.user.email);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    const fetchOrders = useCallback(async () => {
-        if (!email) return;
+    const fetchOrders = useCallback (async () => {
+        if(!email) return;
         try {
             setLoading(true);
             setError('');
             const response = await axios.get('/api/v2/orders/myorders', {
-                params: { email: defaultEmail },
+                params: {email},
             });
             setOrders(response.data.orders);
         } catch (err) {

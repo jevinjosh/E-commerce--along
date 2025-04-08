@@ -40,4 +40,3 @@ const isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
 
 
 module.exports = { isAuthenticatedUser };
-

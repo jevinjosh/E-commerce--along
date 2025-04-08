@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import axios from "../axiosConfig";
 import { useNavigate } from "react-router-dom";
-import Nav from "../components/nav";
+import Nav from "../components/NavBar";
 import { useSelector } from "react-redux";
 
 
 const CreateAddress = () => {
     const navigate = useNavigate();
-    const email=useSelector((state)=>state.user.email);
+    const email=useSelector((state)=> state.user.email)
 
 
     const [country, setCountry] = useState("");
@@ -20,6 +20,7 @@ const CreateAddress = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
         const addressData = {
             country,
             city,

@@ -1,27 +1,26 @@
-import CartProduct from '../components/cartProduct';
-import Nav from '../components/nav';
-import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CartProduct from '../components/cartProduct';
+import Nav from '../components/NavBar';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import axios from '../axiosConfig';
 
 
 const Cart = () => {
-const navigate = useNavigate();
-const [products, setProducts] = useState([]);
-const email=useSelector((state)=>state.user.email);
+
+
+    const [products, setProducts] = useState([]);
+    const navigate=useNavigate();
+    const email=useSelector((state)=>state.user.email)
+
+
     useEffect(() => {
-      if(!email) return;
-        fetch(`/api/v2/product/cartproducts?email=${email}`)
+      if(!email)return;
+        axios.get(`/api/v2/product/cartproducts?email=${email}`)
           .then((res) => {
-            if (!res.ok) {
-              throw new Error(`HTTP error! status: ${res.status}`);
-            }
-            return res.json();
-          })
-          .then((data) => {
-            setProducts(data.cart.map(product => ({quantity: product['quantity'], ...product['productId']})));
-            console.log("Products fetched:", data.cart);
+           
+            setProducts(res.data.cart.map(product => ({quantity: product['quantity'], ...product['productId']})));
+            console.log("Products fetched:", res.data.cart);
           })
           .catch((err) => {
             console.error(" Error fetching products:", err);
@@ -30,10 +29,10 @@ const email=useSelector((state)=>state.user.email);
    
       console.log("Products:", products);
 
-      const handlePlaceOrder =() =>{
+      
+      const handlePlaceOrder=()=>{
         navigate('/select-address')
       }
-
 
     return (
         <div className='w-full h-screen'>
@@ -50,6 +49,7 @@ const email=useSelector((state)=>state.user.email);
                             ))
                         }
                     </div>
+                    
                     <div className='w-full p-4 flex justify-end'>
                     <button
                     onClick={handlePlaceOrder}
@@ -57,7 +57,6 @@ const email=useSelector((state)=>state.user.email);
                    Place Order
                   </button>
                   </div>
-
 
                 </div>
             </div>

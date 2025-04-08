@@ -1,9 +1,11 @@
+// ProductDetails.js
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "../axiosConfig";
-import Nav from "../components/nav";
+import Nav from "../components/NavBar";
 import { IoIosAdd } from "react-icons/io";
 import { IoIosRemove } from "react-icons/io";
+import { useSelector } from "react-redux";
 
 export default function ProductDetails() {
 	const { id } = useParams();
@@ -11,7 +13,7 @@ export default function ProductDetails() {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const [quantity, setQuantity] = useState(1);
-	const email = "jevin@gmail.com"
+	const email=useSelector((state)=> state.user.email)
 
 	useEffect(() => {
 		const fetchProduct = async () => {
@@ -103,7 +105,7 @@ export default function ProductDetails() {
 						<div className="w-full bsm:w-2/3 md:w-1/3 rounded-lg">
 							{product.images && product.images.length > 0 ? (
 								<img
-									src={`http://localhost:8000${product.images[0]}`}
+									src={`http://localhost:${product.images[0]}`}
 									alt={product.name}
 									className="w-full h-full object-contain bsm:object-cover"
 									style={{ maxHeight: "500px" }} // Adjust the max height as needed

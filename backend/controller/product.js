@@ -1,5 +1,3 @@
-// backend/controllers/product.js
-
 const express = require('express');
 const Product = require('../model/product');
 const User = require('../model/user');
@@ -7,7 +5,7 @@ const router = express.Router();
 const { pupload } = require("../multer");
 const path = require('path');
 const mongoose = require('mongoose');
-const {isAuthenicatedUser}=require('../middleware/auth')
+const {isAuthenticatedUser} = require('../middleware/auth');
 
 const validateProductData = (data) => {
     const errors = [];
@@ -23,7 +21,7 @@ const validateProductData = (data) => {
 };
 
 // Route: Create a new product
-router.post('/create-product', pupload.array('images', 10), isAuthenicatedUser,async (req, res) => {
+router.post('/create-product',isAuthenticatedUser, pupload.array('images', 10), async (req, res) => {
     console.log("🛒 Creating product");
     const { name, description, category, tags, price, stock, email } = req.body;
 
@@ -71,7 +69,7 @@ router.post('/create-product', pupload.array('images', 10), isAuthenicatedUser,a
     }
 });
 
-router.get('/get-products', isAuthenicatedUser,async (req, res) => {
+router.get('/get-products',isAuthenticatedUser, async (req, res) => {
     try {
         const products = await Product.find();
         const productsWithFullImageUrl = products.map(product => {
@@ -89,7 +87,7 @@ router.get('/get-products', isAuthenicatedUser,async (req, res) => {
     }
 });
 
-router.get('/my-products', isAuthenicatedUser,async (req, res) => {
+router.get('/my-products',isAuthenticatedUser, async (req, res) => {
     const { email } = req.query;
     try {
         const products = await Product.find({ email });
@@ -110,7 +108,7 @@ router.get('/my-products', isAuthenicatedUser,async (req, res) => {
 );
 
 
-router.get('/product/:id', isAuthenicatedUser,async (req, res) => {
+router.get('/product/:id',isAuthenticatedUser, async (req, res) => {
     console.log("Fetching product");
     const { id } = req.params;
     try {
@@ -125,7 +123,7 @@ router.get('/product/:id', isAuthenicatedUser,async (req, res) => {
     }
 });
 
-router.put('/update-product/:id', pupload.array('images', 10), isAuthenicatedUser,async (req, res) => {
+router.put('/update-product/:id',isAuthenticatedUser, pupload.array('images', 10), async (req, res) => {
     const { id } = req.params;
     const { name, description, category, tags, price, stock, email } = req.body;
 
@@ -176,7 +174,7 @@ router.put('/update-product/:id', pupload.array('images', 10), isAuthenicatedUse
     }
 });
 
-router.delete('/delete-product/:id', isAuthenicatedUser,async (req, res) => {
+router.delete('/delete-product/:id',isAuthenticatedUser, async (req, res) => {
     const { id } = req.params;
 
     try {
@@ -194,7 +192,7 @@ router.delete('/delete-product/:id', isAuthenicatedUser,async (req, res) => {
 });
 
 
-router.post('/cart', isAuthenicatedUser,async (req, res) => {
+router.post('/cart',isAuthenticatedUser, async (req, res) => {
     try {
         const { userId, productId, quantity } = req.body;
         const email = userId;
@@ -240,9 +238,11 @@ router.post('/cart', isAuthenicatedUser,async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server Error' });
-    }
+    }    
 });
-router.get('/cartproducts', isAuthenicatedUser,async (req, res) => {
+
+// GET cart details endpoint
+router.get('/cartproducts',isAuthenticatedUser, async (req, res) => {
     try {
         const { email } = req.query;
         if (!email) {
@@ -264,7 +264,8 @@ router.get('/cartproducts', isAuthenicatedUser,async (req, res) => {
         res.status(500).json({ error: 'Server Error' });
     }
 });
-router.put('/cartproduct/quantity', isAuthenicatedUser,async (req, res) => {
+
+router.put('/cartproduct/quantity',isAuthenticatedUser, async (req, res) => {
     const { email, productId, quantity } = req.body;
     console.log("Updating cart product quantity");
 
@@ -300,6 +301,7 @@ router.put('/cartproduct/quantity', isAuthenicatedUser,async (req, res) => {
         res.status(500).json({ error: 'Server Error' });
     }
 });
+
 
 
 

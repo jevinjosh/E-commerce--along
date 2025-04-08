@@ -8,10 +8,16 @@ import { useNavigate } from "react-router-dom";
 // Ensure axios sends cookies with requests
 axios.defaults.withCredentials = true;
 const Login = () => {
+  const dispatch =useDispatch();
+  const navigate =useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [visible, setVisible] = useState(false);
   const handleSubmit =async(e)=>{
     e.preventDefault();
+    console.log(email,password)
     try {
-      const response = await axios.post("http://localhost:8000/api/v2/user/login", { email, password });
+      const response = await axios.post("http://localhost:5000/api/v2/user/login", { email, password });
       console.log(response.data);
           // Dispatch action to store email in Redux state
           dispatch(setemail(email));
@@ -21,11 +27,7 @@ const Login = () => {
       console.error("There was an error logging in!", error);
     }
   };
-  const dispatch =useDispatch();
-  const navigate =useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [visible, setVisible] = useState(false);
+ 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -35,7 +37,7 @@ const Login = () => {
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form className="space-y-6"onSubmit={handleSubmit}>
+          <form className="space-y-6" onSubmit={handleSubmit} >
             <div>
               <label
                 htmlFor="email"
@@ -119,7 +121,7 @@ const Login = () => {
             </div>
             <div>
               <button
-                type="submit"
+                type="submit" 
                 className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
               >
                 Submit

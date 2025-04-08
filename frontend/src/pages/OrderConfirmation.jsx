@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../axiosConfig';
-import Nav from '../components/nav';
+import Nav from '../components/NavBar';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 
@@ -73,7 +73,7 @@ const OrderConfirmation = () => {
                     name: item.productId.name,
                     price: item.productId.price,
                     images: item.productId.images.map(
-                        (imagePath) => `http://localhost:8000${imagePath}`
+                        (imagePath) => `http://localhost:5000${imagePath}`
                     ),
                     quantity: item.quantity,
                 }));
@@ -284,7 +284,7 @@ const OrderConfirmation = () => {
                             <div className='mt-4' style={{ maxWidth: '500px' }}>
                                 <PayPalScriptProvider
                                     options={{
-                                        'client-id': "AaksnocAXS0mkM6Q7UR0H8Q6JVwbUcHHLJZx0bDXjvQwrf2z_lD8disNNl7tBD_qisvCbz-Xu1CeYtrY",
+                                        'client-id': "Afb6gpKv-MJU9BLHIxnjcRHprsjYEMG-Ee_JAFb_3Jy1xrtPOWKt4J18BuhayGcFt2J5L8Zi1CpUnzmc",
                                     }}
                                 >
                                     <PayPalButtons
@@ -338,3 +338,4 @@ const OrderConfirmation = () => {
 
 
 export default OrderConfirmation;
+
